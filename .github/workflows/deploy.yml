@@ -1,4 +1,4 @@
-name: A workflow to start tests on push
+name: A workflow to deploy the project on Heroku
 on: push
 jobs:
   setup-ruby:
