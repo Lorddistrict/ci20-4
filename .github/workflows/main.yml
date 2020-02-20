@@ -1,7 +1,7 @@
 name: A workflow to start tests on push
 on: push
 jobs:
-  build:
+  test:
     name: Make some tests
     runs-on: ubuntu-latest    
     steps:
