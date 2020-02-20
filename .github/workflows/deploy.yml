@@ -9,7 +9,6 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: '2.6'
-    - run: ruby hello.rb
   deploy:
     name: Deploy APP
     runs-on: ubuntu-latest
