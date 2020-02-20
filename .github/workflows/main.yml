@@ -1,9 +1,39 @@
 name: A workflow to start tests on push
 on: push
 jobs:
-  test:
-    name: Make some tests
+  test-integration:
+    name: Integration TESTS
     runs-on: ubuntu-latest    
     steps:
-    - run:
-          make test
+    - name:
+        Install dependencies
+      run:
+        composer install
+    - name:
+        Start Integration tests
+      run:
+        bin/phpunit tests/Integration
+  test-unit:
+    name: Unit TESTS
+    runs-on: ubuntu-latest
+    steps:
+    - name:
+        Install dependencies
+      run:
+        composer install
+    - name:
+        Start Integration tests
+      run:
+        bin/phpunit tests/Unit
+  test-functionnal:
+    name: Functionnal TESTS
+    runs-on: ubuntu-latest
+    steps:
+    - name:
+        Install dependencies
+      run:
+        composer install
+    - name:
+        Start Functionnals tests
+      run:
+        php vendor/bin/behat
