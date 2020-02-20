@@ -1,1 +1,28 @@
-
+name: A workflow to start tests on push
+on: push
+jobs:
+  setup-ruby:
+    name: Setup RUBY
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.6'
+    - run: ruby hello.rb
+  deploy:
+    name: Deploy APP
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name:
+        Install gem for Ruby
+      run:
+        gem install dpl
+    - name:
+        Start Deployment
+      run:
+        dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_API_KEY
+      env:
+        HEROKU_APP_NAME: sf-workflow
+        HEROKU_APP_KEY: c95e6a53-b415-4ab2-bf74-39ad38cb564b
