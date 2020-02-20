@@ -3,8 +3,9 @@ on: push
 jobs:
   test-integration:
     name: Integration TESTS
-    runs-on: ubuntu-latest    
+    runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - name:
         Install dependencies
       run:
@@ -17,6 +18,7 @@ jobs:
     name: Unit TESTS
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - name:
         Install dependencies
       run:
@@ -29,6 +31,7 @@ jobs:
     name: Functionnal TESTS
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - name:
         Install dependencies
       run:
