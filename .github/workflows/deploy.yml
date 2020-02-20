@@ -16,4 +16,4 @@ jobs:
     - name:
         Start Deployment
       run:
-        dpl --provider=heroku --app=${{secret.HEROKU_APP_NAME}} --api-key=${{secret.HEROKU_API_KEY}}
+        dpl --provider=heroku --app=${{secrets.HEROKU_APP_NAME}} --api-key=${{secrets.HEROKU_API_KEY}}
