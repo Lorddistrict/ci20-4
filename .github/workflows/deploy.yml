@@ -15,14 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name:
-        Update Bundle
-      run:
-        gem update bundle
-    - name:
-        Update Bundler
-      run:
-        bundle update --bundler
-    - name:
         Install gem for Ruby
       run:
         gem install dpl
