@@ -15,9 +15,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name:
-        Update Gem
+        Update Bundle
       run:
-        gem update --system
+        gem update bundle
+    - name:
+        Update Bundler
+      run:
+        bundle update --bundler
     - name:
         Install gem for Ruby
       run:
