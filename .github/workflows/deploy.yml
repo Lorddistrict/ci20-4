@@ -3,7 +3,7 @@ on: push
 jobs:
   setup-ruby:
     name: Setup RUBY
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-ruby@v1
@@ -14,6 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name:
+        Update Gem
+      run:
+        gem update --system
     - name:
         Install gem for Ruby
       run:
